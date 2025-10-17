@@ -23,14 +23,10 @@ jobs:
     - name: Run Unit Tests
       run: npm test
 
-    - name: Run npm audit and GitLeaks in one step
-      run: |
-        echo "Running npm audit..."
-        npm audit --audit-level=moderate
+    - name: Run NPM Audit (Dependency Scan)
+      run: npm audit --audit-level=high
 
-        echo "Downloading and running GitLeaks..."
-        curl -sL https://github.com/gitleaks/gitleaks/releases/download/v8.18.1/gitleaks_8.18.1_linux_x64.tar.gz | tar -xz
-        sudo mv gitleaks /usr/local/bin/gitleaks
-
-        echo "Running GitLeaks scan..."
-        gitleaks detect --source . --exit-code 1
+    - name: GitLeaks Scan (Secrets Detection)
+      uses: zricethezav/gitleaks-action@v2
+      with:
+        args: --verbose --redact
