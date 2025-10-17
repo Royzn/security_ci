@@ -9,6 +9,6 @@
   },
   "dependencies": {
     "dotenv": "^17.2.3",
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.21"
   }
 }

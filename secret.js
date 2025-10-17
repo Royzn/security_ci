@@ -1,1 +1,2 @@
-const key = "ghp_ABC123FAKESECRETKEY";
+require('dotenv').config();
+const key = process.env.KEY;
