@@ -1,0 +1,13 @@
+{
+  "name": "js_demo_ci",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10"
+  }
+}
